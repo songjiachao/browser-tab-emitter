@@ -37,7 +37,7 @@ export class BrowserTabEmitter {
 
   emit(id: string, value: any) {
     // 直接写入数据
-    if (id.substring(0, 3) === this.options.prefix) {
+    if (id.substring(0, 4) === this.options.prefix) {
       window.localStorage.setItem(id, JSON.stringify({
         // 必须加一个时间戳，storage事件只有在值真正改变时才会触发
         key: +new Date(),

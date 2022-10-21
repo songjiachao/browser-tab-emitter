@@ -49,7 +49,7 @@ var BrowserTabEmitter = class {
     this.eventsMap.set(id, callback);
   }
   emit(id, value) {
-    if (id.substring(0, 3) === this.options.prefix) {
+    if (id.substring(0, 4) === this.options.prefix) {
       window.localStorage.setItem(id, JSON.stringify({
         key: +new Date(),
         value
