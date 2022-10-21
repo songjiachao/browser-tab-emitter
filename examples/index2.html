@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-plus"></script>
+  <!-- import BrowserEmitter -->
+  <script src="../dist/index.global.js"></script>
+  <title>Browser Emitter Demo</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="common-layout">
+      <el-container>
+        <el-header>
+          <h1>我是页面2</h1>
+        </el-header>
+        <el-main>
+          <el-card class="box-card" header="localStorage">
+            <el-input v-model="input1" disabled>
+              <template #prepend>收到信息</template>
+            </el-input>
+          </el-card>
+        </el-main>
+      </el-container>
+    </div>
+  </div>
+  <script>
+    const App = {
+      data() {
+        return {
+          input1: "",
+        };
+      },
+      mounted() {
+        const be = new BrowserEmitter()
+        be.on('be:input1', (data) => {
+          this.input1 = data
+        })
+      },
+    };
+    const app = Vue.createApp(App);
+    app.use(ElementPlus);
+    app.mount("#app");
+  </script>
+</body>
+
+</html>

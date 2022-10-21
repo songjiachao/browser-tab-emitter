@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script src="https://unpkg.com/vue@next"></script>
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-plus"></script>
+  <!-- import BrowserEmitter -->
+  <script src="../dist/index.global.js"></script>
+  <title>Browser Emitter Demo</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="common-layout">
+      <el-container>
+        <el-header>
+          <h1>我是页面1<el-link type="primary" href="./index2.html" target="_blank">点我打开页面2</el-link></h1>
+        </el-header>
+        <el-main>
+          <el-card class="box-card" header="localStorage">
+            <el-input v-model="input1" placeholder="Please input">
+              <template #append>
+                <el-button @click="sendMsg">发送</el-button>
+              </template>
+            </el-input>
+          </el-card>
+        </el-main>
+      </el-container>
+    </div>
+  </div>
+  <script>
+    const App = {
+      data() {
+        return {
+          input1: "",
+        };
+      },
+      methods: {
+        sendMsg() {
+          const be = new BrowserEmitter()
+          be.emit('be:input1', this.input1)
+        }
+      },
+    };
+    const app = Vue.createApp(App);
+    app.use(ElementPlus);
+    app.mount("#app");
+  </script>
+</body>
+
+</html>
