@@ -1,8 +1,8 @@
 // src/index.ts
 var defaultBEOptions = {
-  prefix: "be:"
+  prefix: "bte:"
 };
-var BrowserEmitter = class {
+var BrowserTabEmitter = class {
   constructor(options) {
     this.eventsMap = /* @__PURE__ */ new Map();
     this.options = Object.assign({}, defaultBEOptions, options);
@@ -17,7 +17,7 @@ var BrowserEmitter = class {
         if (typeof callback === "function") {
           callback(data.value);
         } else {
-          console.warn("BrowserEmitter: The key " + id + " do not have an callback function");
+          console.warn("BrowserTabEmitter: The key " + id + " do not have an callback function");
         }
       }
     };
@@ -34,7 +34,7 @@ var BrowserEmitter = class {
     }
   }
 };
-window.BrowserEmitter = BrowserEmitter;
+window.BrowserTabEmitter = BrowserTabEmitter;
 export {
-  BrowserEmitter
+  BrowserTabEmitter
 };

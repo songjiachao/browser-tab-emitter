@@ -1,5 +1,5 @@
 {
-  "name": "browser-emitter",
+  "name": "browser-tab-emitter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
   <!-- import JavaScript -->
   <script src="https://unpkg.com/element-plus"></script>
-  <!-- import BrowserEmitter -->
+  <!-- import BrowserTabEmitter -->
   <script src="../dist/index.global.js"></script>
   <title>Browser Emitter Demo</title>
 </head>
@@ -38,8 +38,8 @@
         };
       },
       mounted() {
-        const be = new BrowserEmitter()
-        be.on('be:input1', (data) => {
+        const be = new BrowserTabEmitter()
+        be.on('bte:input1', (data) => {
           this.input1 = data
         })
       },

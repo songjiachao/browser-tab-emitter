@@ -4,10 +4,10 @@ export interface BEOptions {
 }
 
 const defaultBEOptions:BEOptions = {
-  prefix: 'be:'
+  prefix: 'bte:'
 }
 
-export class BrowserEmitter {
+export class BrowserTabEmitter {
   eventsMap: Map<string, Function> = new Map()
   options: BEOptions
 
@@ -25,7 +25,7 @@ export class BrowserEmitter {
         if (typeof callback === 'function') {
           callback(data.value)
         } else {
-          console.warn('BrowserEmitter: The key ' + id + ' do not have an callback function')
+          console.warn('BrowserTabEmitter: The key ' + id + ' do not have an callback function')
         }
       }
     };
@@ -47,4 +47,4 @@ export class BrowserEmitter {
   }
 }
 
-(window as any).BrowserEmitter = BrowserEmitter
+(window as any).BrowserTabEmitter = BrowserTabEmitter

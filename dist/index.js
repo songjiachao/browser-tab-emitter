@@ -19,13 +19,13 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
-  BrowserEmitter: () => BrowserEmitter
+  BrowserTabEmitter: () => BrowserTabEmitter
 });
 module.exports = __toCommonJS(src_exports);
 var defaultBEOptions = {
-  prefix: "be:"
+  prefix: "bte:"
 };
-var BrowserEmitter = class {
+var BrowserTabEmitter = class {
   constructor(options) {
     this.eventsMap = /* @__PURE__ */ new Map();
     this.options = Object.assign({}, defaultBEOptions, options);
@@ -40,7 +40,7 @@ var BrowserEmitter = class {
         if (typeof callback === "function") {
           callback(data.value);
         } else {
-          console.warn("BrowserEmitter: The key " + id + " do not have an callback function");
+          console.warn("BrowserTabEmitter: The key " + id + " do not have an callback function");
         }
       }
     };
@@ -57,8 +57,8 @@ var BrowserEmitter = class {
     }
   }
 };
-window.BrowserEmitter = BrowserEmitter;
+window.BrowserTabEmitter = BrowserTabEmitter;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  BrowserEmitter
+  BrowserTabEmitter
 });
