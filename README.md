@@ -21,23 +21,30 @@ or if you use yarn
 ### from CDN
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/browser-tab-emitter@1.0.1/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/browser-tab-emitter@1.0.3/dist/index.global.js"></script>
 ```
 
-## 使用
+## Example
+client1.js
 ```js
 // npm install need, cdn way has been installed in global (window)
 import BrowserTabEmitter from 'browser-tab-emitter'
 
 const bte = new BrowserTabEmitter({
-  prefix: 'bte:'  // 可选，默认以'bte:'开头的key，存储到localStorage里面
+  prefix: 'bte:'  // optional，default 'bte:'
 })
 
 // 绑定事件
-bte.on('bte:input1', (data) => {
+bte.on('event1', (data) => {
   this.input1 = data
 })
+```
 
+client2.js
+
+```js
+import BrowserTabEmitter from 'browser-tab-emitter'
+const bte = new BrowserTabEmitter()
 // 触发事件
-bte.emit('bte:input1', this.input1)
+bte.emit('event1', data)
 ```

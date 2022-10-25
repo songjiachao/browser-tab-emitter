@@ -3,7 +3,7 @@ export interface BEOptions {
   prefix?: string
 }
 
-const defaultBEOptions:BEOptions = {
+const defaultBEOptions: BEOptions = {
   prefix: 'bte:'
 }
 
@@ -32,18 +32,15 @@ export default class BrowserTabEmitter {
   }
 
   on(id: string, callback: Function) {
-    this.eventsMap.set(id, callback)
+    this.eventsMap.set(this.options.prefix + id, callback)
   }
 
   emit(id: string, value: any) {
-    // 直接写入数据
-    if (id.substring(0, 4) === this.options.prefix) {
-      window.localStorage.setItem(id, JSON.stringify({
-        // 必须加一个时间戳，storage事件只有在值真正改变时才会触发
-        key: +new Date(),
-        value
-      }))
-    }
+    window.localStorage.setItem(this.options.prefix + id, JSON.stringify({
+      // 必须加一个时间戳，storage事件只有在值真正改变时才会触发
+      key: +new Date(),
+      value
+    }))
   }
 }
 

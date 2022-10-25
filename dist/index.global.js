@@ -24,15 +24,13 @@
       };
     }
     on(id, callback) {
-      this.eventsMap.set(id, callback);
+      this.eventsMap.set(this.options.prefix + id, callback);
     }
     emit(id, value) {
-      if (id.substring(0, 4) === this.options.prefix) {
-        window.localStorage.setItem(id, JSON.stringify({
-          key: +new Date(),
-          value
-        }));
-      }
+      window.localStorage.setItem(this.options.prefix + id, JSON.stringify({
+        key: +new Date(),
+        value
+      }));
     }
   };
   window.BrowserTabEmitter = BrowserTabEmitter;
