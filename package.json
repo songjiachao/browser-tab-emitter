@@ -1,14 +1,39 @@
 {
   "name": "browser-tab-emitter",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsup src/*.ts --format cjs,esm,iife"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "homepage": "https://github.com/songjiachao/browser-tab-emitter",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:songjiachao/browser-tab-emitter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/songjiachao/browser-tab-emitter/issues"
+  },
+  "keywords": [
+    "browser",
+    "tab",
+    "emitter"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "package.json"
+  ],
+  "author": "songjiachao",
+  "license": "MIT",
   "devDependencies": {
     "tsup": "^6.3.0",
     "typescript": "^4.8.4"

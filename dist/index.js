@@ -19,7 +19,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
-  BrowserTabEmitter: () => BrowserTabEmitter
+  default: () => BrowserTabEmitter
 });
 module.exports = __toCommonJS(src_exports);
 var defaultBEOptions = {
@@ -59,6 +59,4 @@ var BrowserTabEmitter = class {
 };
 window.BrowserTabEmitter = BrowserTabEmitter;
 // Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  BrowserTabEmitter
-});
+0 && (module.exports = {});

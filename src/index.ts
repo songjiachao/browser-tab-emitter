@@ -7,7 +7,7 @@ const defaultBEOptions:BEOptions = {
   prefix: 'bte:'
 }
 
-export class BrowserTabEmitter {
+export default class BrowserTabEmitter {
   eventsMap: Map<string, Function> = new Map()
   options: BEOptions
 

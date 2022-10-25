@@ -4,20 +4,29 @@
 ## 示例
 https://songjiachao.github.io/browser-tab-emitter/examples/index.html
 
-![示例](./screenshots/demo.gif)
+![示例](https://cdn.jsdelivr.net/npm/browser-tab-emitter@1.0.1/screenshots/demo.gif)
 
 
 
-## 安装
---------------------------
+## Installation
+
+### from NPM
+
 `npm i browser-tab-emitter`
 
 or if you use yarn
 
 `yarn add browser-tab-emitter`
 
+### from CDN
+
+```
+<script src="https://cdn.jsdelivr.net/npm/browser-tab-emitter@1.0.1/dist/index.global.js"></script>
+```
+
 ## 使用
 ```js
+// npm install need, cdn way has been installed in global (window)
 import BrowserTabEmitter from 'browser-tab-emitter'
 
 const bte = new BrowserTabEmitter({

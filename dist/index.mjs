@@ -36,5 +36,5 @@ var BrowserTabEmitter = class {
 };
 window.BrowserTabEmitter = BrowserTabEmitter;
 export {
-  BrowserTabEmitter
+  BrowserTabEmitter as default
 };
