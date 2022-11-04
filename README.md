@@ -1,5 +1,5 @@
 # browser-tab-emitter
-An event emitter use localStorage for same-origin browser tab communication
+
 <p align="center">
 <a href="https://github.com/songjiachao/browser-tab-emitter"><img height="200" src="https://raw.githubusercontent.com/songjiachao/images/main/browser-tab-emitter/logo.png" alt="browser-tab-emitter"></a>
 </p>
@@ -10,12 +10,15 @@ An event emitter use localStorage for same-origin browser tab communication
   <a href="https://github.com/songjiachao/browser-tab-emitter/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/songjiachao/browser-tab-emitter" alt="License" /></a>
 </p>
 
-## Demo
+## 📖 Introduction
+An event emitter use localStorage for same-origin browser tab communication
+
+## 🎁 Demo
 https://songjiachao.github.io/browser-tab-emitter/examples/index.html
 
 ![Demo](https://raw.githubusercontent.com/songjiachao/images/main/browser-tab-emitter/demo.gif)
 
-## Installation
+## 📦 Installation
 
 ### from NPM
 
@@ -31,7 +34,7 @@ or if you use yarn
 <script src="https://cdn.jsdelivr.net/npm/browser-tab-emitter@1.0.5/dist/index.global.js"></script>
 ```
 
-## Usage
+## 🛠 Usage
 client1.js
 ```js
 // npm install need, cdn way has been installed in global (window)
